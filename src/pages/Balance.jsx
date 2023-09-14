@@ -10,7 +10,7 @@ const Balance = () => {
   const fintechNo = parsed.fintechUseNo;
 
   const [balance, setBalance] = useState("0");
-  const [transactions, setTranscations] = useState("0");
+  const [transactions, setTranscations] = useState([]);
 
   useEffect(() => {
     getBalance();
@@ -84,28 +84,7 @@ const Balance = () => {
       <div>
         {balance}
       </div>
-
-      <div>
-        <span>조회기간</span>
-        <label for="startDate">
-          <input type="date"
-            id="startDate"
-            max="2019-05-20"
-            min="2023-08-14"
-            value="2023-08-14" />
-        </label>
-        <span>-</span>
-        <label for="startDate">
-          <input type="date"
-            id="startDate"
-            max="2019-05-20"
-            min="2023-09-14"
-            value="2023-09-14" />
-        </label>
-      </div>
-
       <TransactionList transactionList={transactions} />
-
     </div>
   );
 };

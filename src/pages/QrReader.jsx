@@ -1,15 +1,31 @@
 import React, { useState } from "react";
 import QrCodeReader from "react-qrcode-reader";
+import ModalWithdraw from '../components/withdraw/ModalWithdraw';
+import Modal from "react-modal";
 
 const QrReader = () => {
   const [val, setVal] = useState("");
+
+  const [openModal, setOpenModal] = useState(false); //no camera : true
+
+  const closeModal = () => {
+    setOpenModal(false);
+  };
+
+  const handleRead = (val) => {
+    setOpenModal(true);
+    setVal(val);
+  };
   return (
     <div>
       <>
-        <QrCodeReader delay={100} width={600} height={500} action={setVal} />
-        <p>{val}</p>
+        <QrCodeReader delay={100} width={600} height={500} action={handleRead} />
+        <Modal isOpen={openModal} onRequestClose={closeModal}>
+          <ModalWithdraw tofintechno={val}></ModalWithdraw>
+        </Modal>
+        {val}
       </>
-    </div>
+    </div >
   );
 };
 

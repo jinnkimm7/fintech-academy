@@ -3,6 +3,8 @@ import MainPage from './pages/MainPage';
 import AuthResult from './pages/AuthResult';
 import AccountList from './pages/AccountList';
 import Balance from './pages/Balance';
+import QrReader from './pages/QrReader';
+import QrCode from './pages/QrCode';
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
         <Route path='/authResult' element={<AuthResult />} />
         <Route path="/list" element={<AccountList />}></Route>
         <Route path="/balance" element={<Balance />}></Route>
+        <Route path="/qrcode" element={<QrCode />}></Route>
+        <Route path="/qrreader" element={<QrReader />}></Route>
       </Routes>
     </BrowserRouter>
   );

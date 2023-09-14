@@ -80,7 +80,7 @@ const ModalCard = ({ bankName, fintechUseNo, tofintechno }) => {
     axios(option).then(({ data }) => {
       console.log(data);
       if (data.rsp_code === "A0000") {
-        alert("출금 완료");
+        deposit();
       }
     });
   };
@@ -93,7 +93,7 @@ const ModalCard = ({ bankName, fintechUseNo, tofintechno }) => {
      * 입금을 하는 계좌를 잘 선택해 주세요
      */
     const twoLeggedToken =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJNMjAyMzAwNDQwIiwic2NvcGUiOlsib29iIl0sImlzcyI6Imh0dHBzOi8vd3d3Lm9wZW5iYW5raW5nLm9yLmtyIiwiZXhwIjoxNjk4ODIxNjkzLCJqdGkiOiI0ZGFmN2ZlNy03MmViLTRiNmYtOTQ2OS0wYzZlOWRmMDhlM2UifQ.3TtYtDOC2KcN60ozfvzugoDK2Z_9jYcaeyJRvkXzKLw";
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJNMjAyMzAwNDQwIiwic2NvcGUiOlsib29iIl0sImlzcyI6Imh0dHBzOi8vd3d3Lm9wZW5iYW5raW5nLm9yLmtyIiwiZXhwIjoxNzAyNDU0NzEyLCJqdGkiOiI2NzI5MGFkNi03YTIwLTQxZGUtYTFlMC1jNmExMjQ4YzcwZWIifQ.N_2RxgrYsgu8-oObr9AlyfZdgJrJ7L5KyfdsvfRJuUQ";
     //2legged Token 입력바랍니다.
 
     const data = {
